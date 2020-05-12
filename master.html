@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+		<meta content="utf-8" http-equiv="encoding">
+		<title>Multi Tab Drifting</title>
+		
+		<script type="text/javascript" src="master.js"></script>
+		<script type="text/javascript" src="operation.js"></script>
+	</head>
+	<body>
+		<h1>Multi Tab Drifting</h2>
+		<h2>What is this</h2>
+		<p>This is a stupid way of doing multiple threads.</p>
+		<p>As you may know, due to various reasons, JavaScript does not natively support parallel processes. In other words, each tab is a single process.</p>
+		<p>So my question was, can you do multiple threads by opening multiple tabs?</p>
+		<p>After all, all you real need for parallelization is the ability to pass information between processes, and there are multiple ways to do so, including localStorage and the reference gained from window.open().</p>
+		<p>So I'm going to try that and see if it works.</p>
+		<label for="inputN">N:</label>
+		<input type="number" id="inputN" min="1" max="100000000">
+		<label for="inputThreads">Threads:</label>
+		<input type="number" id="inputThreads" min="1" max="40">
+		<button id="BeginButton" onclick="masterBegin()">Begin</button>
+		<p>Final Result: <span id="hereResult">No runs yet</span></p>
+		<p>Elapsed Time: <span id="hereTime">No runs yet</span></p>
+		<br>
+		<button id="CloseButton" onclick="closeEverything()">Close</button>
+		
+	</body>
+</html>
